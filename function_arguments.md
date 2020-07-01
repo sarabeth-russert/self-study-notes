@@ -5,13 +5,11 @@
 - Parameters are the names listed in the function definition.
 - Arguments are the real values passed into the function call.
 
-In javascript the type of information does not need to be defined by the functions parameters. You can even pass more or less arguments than is defined when creating the function. Arguments can be either passed by value or passed by reference depending on the type of information an argument is.
-- Primitive types like strings, numbers, boolean, null, and undefined are passed by value.
-- Objects and Arrays are passed by reference
+In javascript the type of information passed does not need to be defined by the functions parameters. You can even pass more or less arguments than is defined when creating the function. Arguments are always passed by value in javascript.
 
-In the case of arguments that are passed by value anything done to the passed value within the function does not affect the variable outside the scope of the function. This is because the function was passed a copy of the value of the variable.
+In the case of arguments that are primitive types *like strings, numbers, boolean, null, and undefined* anything done to the passed value within the function does not affect the variable outside the scope of the function. This is because the function was passed a copy of the value of the variable.
 
-In the case of an object or array that is passed by reference into a function anything that is altered in the object within the function is reflected in the object even outside the scope of the function. This is because the function is being given a variable that points directly to the original object to use for the function, not a copy.
+In the case of an object or array the value passed is a pointer or reference to the space that the object holds in memory. If a change is made to the object (or array) within the function it can change the object outside of the function. This can only occur by refering directly to the part of the object you want to change using a specific pointer, in the case of an object the objectName.propertyKey, in the case of array the properties like index, push, splice, slice, etc can modify the array.
 
 When an equation is passed as an argument into a funtion the argument is first evaluated and then the function is invoked. So in the case of an argument like i++ the argument is evaluated. The value of i is returned, the increment applied, and then the function is invoked with the new value of i.
 
